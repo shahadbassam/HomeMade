@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var authManager = AuthManager()
+    
     var body: some View {
-        login()
+        if authManager.isLoggedIn {
+            MainView()
+                .environmentObject(AppState())
+        } else {
+            LoginView()
+        }
     }
 }
 

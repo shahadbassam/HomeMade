@@ -16,9 +16,7 @@ struct ButtonStyle: View {
       
             
           ZStack {
-              
               Text(buttonText)
-                  
                   .foregroundColor(.white)
               Spacer()
 

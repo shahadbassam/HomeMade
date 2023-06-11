@@ -33,9 +33,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct HomeMadeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
     }
+}
+
+final class AppState : ObservableObject {
+    @Published var rootViewId = UUID()
 }
